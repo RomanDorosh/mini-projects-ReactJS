@@ -1,23 +1,18 @@
-import { useState } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import projectsData from './assets/data/projects'
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from './layout/Navbar';
+import Footer from './layout/Footer';
 import Home from './pages/Home';
 import SingleProject from './pages/SingleProject';
 
 function App() {
-  const [projects, setProjects] = useState(projectsData);
-  const [categories, setCategories] = useState([])
-  console.log(projects);
   return (
     <Router>
       <Navbar />
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route path="/project/:id">
-        <SingleProject />
-      </Route>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/project/:id" element={<SingleProject />} />
+      </Routes>
+      <Footer />
     </Router>
   );
 }
