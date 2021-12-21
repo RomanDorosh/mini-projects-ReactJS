@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from './layout/Navbar';
 import Footer from './layout/Footer';
 import Home from './pages/Home';
-import SingleProject from './pages/SingleProject';
+import PalindromeChecker from './pages/PalindromeChecker';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/project/:id" element={<SingleProject />} />
+        <Route path="/palindromechecker" element={<PalindromeChecker />} />
       </Routes>
       <Footer />
     </Router>

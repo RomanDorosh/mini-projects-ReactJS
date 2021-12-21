@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 import projectsData from '../assets/data/projects'
 import Categories from './Categories';
 import Project from './Project';
