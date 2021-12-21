@@ -1,4 +1,4 @@
-![Screenshot of DinoWorld App](https://github.com/RomanDorosh/mini-projects-ReactJS.git/src/assets/images/ProjectOfProjects.png)
+![Screenshot of ProjectOfProjects App](https://github.com/RomanDorosh/mini-projects-ReactJS.git/src/assets/images/ProjectOfProjects.png)
 
 # Project of mini Projects
 In this ReactJS project I have collected some of my mini projects builded with Vanilla JS.
