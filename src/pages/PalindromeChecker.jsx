@@ -1,25 +1,54 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 const PalindromeChecker = () => {
-    const palindrome = (str) => {
-        let myRegex = /[a-z0-9]/ig;
-        let arr = str.toLowerCase().match(myRegex);
-        let arrRev = str.toLowerCase().match(myRegex).reverse();
-        if (arr.join('') === arrRev.join('')) {
-            return console.log("true");
+    const [string, setString] = useState("");
+    const [palindrome, setPalindrome] = useState(false);
+    const [error, setError] = useState(false);
+    const [result, setResult] = useState('Try to check');
+    const firstUpdate = useRef(true)
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        try {
+            let myRegex = /[a-z0-9]/ig;
+            let arr = string.toLowerCase().match(myRegex);
+            let arrRev = string.toLowerCase().match(myRegex).reverse();
+            setPalindrome(arr.join('') === arrRev.join(''))
+        } catch (error) {
+            setError(true);
+            console.log(error);
         }
-        return console.log("false");;
     }
+    useEffect(() => {
+        if (firstUpdate.current) {
+            firstUpdate.current = false;
+            return;
+        }
+        palindrome ? setResult('It is a palindrome') : setResult('It is not a palindrome')
+    }, [palindrome])
 
     return (
         <main>
-            <section className="menu section">
+            <section className="project section">
                 <div className="title">
-                    <h2>Palindrome Checker</h2>
+                    <h3>Palindrome Checker</h3>
                     <div className="underline"></div>
                 </div>
-                <button className='btn' onClick={() => palindrome("eyea")}>Check</button>
-                <button className='btn'>go back</button>
+                <h4>{result}</h4>
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type='text'
+                        value={string}
+                        onChange={(e) => setString(e.target.value)}
+                        placeholder='Enter some word'
+                        className={`${error ? 'error' : null}`}
+                    />
+                    <button className='btn' type='submit'>
+                        submit
+                    </button>
+                </form>
+                <Link to="/"><button className='btn btn-back'>go back</button></Link>
             </section>
         </main>
     )

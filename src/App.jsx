@@ -3,6 +3,8 @@ import Navbar from './layout/Navbar';
 import Footer from './layout/Footer';
 import Home from './pages/Home';
 import PalindromeChecker from './pages/PalindromeChecker';
+import RomanNumeralConverter from "./pages/RomanNumeralConverter";
+import CaesarScipher from "./pages/CaesarScipher";
 
 function App() {
   return (
@@ -11,6 +13,17 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/palindromechecker" element={<PalindromeChecker />} />
+        <Route path="/romannumeralconverter" element={<RomanNumeralConverter />} />
+        <Route path="/caesarscipher" element={<CaesarScipher />} />
+        {/* <Route path="/telephonenumbervalidator" element={<TelephoneNumberValidator />} />
+        <Route path="/cashregister" element={<CashRegister />} />
+        <Route path="/randomquotemachine" element={<RandomQuoteMachine />} />
+        <Route path="/markdownpreviewer" element={<MarkdownPreviewer />} />
+        <Route path="/drummachine" element={<DrumMachine />} />
+        <Route path="/javascriptcalculator" element={<JavascriptCalculator />} />
+        <Route path="/twentyfiveplusfiveclock" element={<TwentyfivePlusFiveClock />} />
+        <Route path="/surveyform" element={<SurveyForm />} />
+        <Route path="/productlandingpage" element={<ProductLandingPage />} /> */}
       </Routes>
       <Footer />
     </Router>
