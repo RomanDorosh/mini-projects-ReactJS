@@ -9,7 +9,6 @@ const allCategories = ['all', ...new Set(projectsData.map((project) => project.c
 const ProjectList = () => {
     const [projects, setProjects] = useState(projectsData);
     const [categories, setCategories] = useState(allCategories)
-    console.log(projects);
 
     const filterItems = (category) => {
         if (category === 'all') {
@@ -23,7 +22,7 @@ const ProjectList = () => {
 
     return (
         <main>
-            <section className="menu section">
+            <section className="projects-list section">
                 <div className="title">
                     <h2>my projects</h2>
                     <div className="underline"></div>

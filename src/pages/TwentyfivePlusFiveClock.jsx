@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const RomanNumeralConverter = () => {
+const TwentyfivePlusFiveClock = () => {
     return (
         <main>
             <section className="project section-center">
                 <div className="title">
-                    <h3>roman numeral converter</h3>
+                    <h3>25 + 5 clock</h3>
                     <div className="underline"></div>
                 </div>
                 <h4>This project is currently under development...</h4>
@@ -16,4 +16,4 @@ const RomanNumeralConverter = () => {
     )
 }
 
-export default RomanNumeralConverter
+export default TwentyfivePlusFiveClock

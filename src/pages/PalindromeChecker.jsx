@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const PalindromeChecker = () => {
     const [string, setString] = useState("");
-    const [palindrome, setPalindrome] = useState(false);
+    const [palindrome, setPalindrome] = useState(null);
     const [error, setError] = useState(false);
     const [result, setResult] = useState('Try to check');
     const firstUpdate = useRef(true)
@@ -30,7 +30,7 @@ const PalindromeChecker = () => {
 
     return (
         <main>
-            <section className="project section">
+            <section className="project section-center">
                 <div className="title">
                     <h3>Palindrome Checker</h3>
                     <div className="underline"></div>

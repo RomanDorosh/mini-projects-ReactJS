@@ -6,7 +6,7 @@ const Project = ({ id, title, desc, img, category }) => {
     return (
         //Get route name from title
         <Link to={title.replace(/ /g, '')}>
-            <article key={id} className='menu-item'>
+            <article key={id} className='projects-list-item'>
                 <img src={img} alt={title} className='photo' />
                 <div className='item-info'>
                     <header>
