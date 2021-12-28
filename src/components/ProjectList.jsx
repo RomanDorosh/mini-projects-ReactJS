@@ -28,7 +28,7 @@ const ProjectList = () => {
                     <div className="underline"></div>
                 </div>
                 <Categories categories={categories} filterItems={filterItems} />
-                <div className='section-center'>
+                <div className='section-center section-list-center'>
                     {projects.map((project) => {
                         return (
                             <Project key={project.id} {...project} />

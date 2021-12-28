@@ -47,6 +47,7 @@ const RomanNumeralConverter = () => {
                         submit
                     </button>
                 </form>
+                <p>Convert the given number into a roman numeral.</p>
                 <Link to="/"><button className='btn btn-back'>go back</button></Link>
             </section>
         </main>

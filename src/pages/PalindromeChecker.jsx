@@ -48,6 +48,7 @@ const PalindromeChecker = () => {
                         submit
                     </button>
                 </form>
+                <p>A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.</p>
                 <Link to="/"><button className='btn btn-back'>go back</button></Link>
             </section>
         </main>
