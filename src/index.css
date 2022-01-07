@@ -282,3 +282,36 @@ input.error {
   }
 }
 
+/*
+=============== 
+Markdown
+===============
+*/
+.markdown {
+  padding: 4rem;
+  display: grid;
+  row-gap: 4rem;
+}
+
+.markdown-input {
+  border-color: transparent;
+  border-radius: var(--radius);
+  font-size: 1.2rem;
+  line-height: 2;
+  box-shadow: var(--dark-shadow);
+  min-height: 30vh;
+}
+.markdown-input,
+.markdown-result {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 992px) {
+  .markdown {
+    min-height: 50vh;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+  }
+}
+

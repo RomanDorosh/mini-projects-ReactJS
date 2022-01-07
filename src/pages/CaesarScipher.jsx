@@ -11,7 +11,6 @@ const CaesarScipher = () => {
         e.preventDefault()
         if (string !== "") {
             try {
-                const alpha = Array.from(Array(26)).map((e, i) => i + 65);
                 const newStr = Array.from(string).map((e) => {
                     if (e.match(/[A-Z]/i)) {
                         let code = e.charCodeAt(0) + 13;
