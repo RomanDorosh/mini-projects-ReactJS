@@ -24,8 +24,8 @@ const projects = [
     },
     {
         id: 4,
-        title: 'telephone number validator',
-        desc: 'Return true if the passed string looks like a valid spain mobile phone number',
+        title: 'currency converter',
+        desc: 'Convert any currency',
         category: 'logic',
         img: image_project_01,
     },

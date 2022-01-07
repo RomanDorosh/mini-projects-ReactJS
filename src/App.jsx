@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import PalindromeChecker from './pages/PalindromeChecker';
 import RomanNumeralConverter from "./pages/RomanNumeralConverter";
 import CaesarScipher from "./pages/CaesarScipher";
-import TelephoneNumberValidator from "./pages/TelephoneNumberValidator";
+import CurrencyConverter from "./pages/CurrencyConverter";
 import CashRegister from "./pages/CashRegister";
 import RandomQuoteMachine from "./pages/RandomQuoteMachine";
 import MarkdownPreviewer from "./pages/MarkdownPreviewer";
@@ -24,7 +24,7 @@ function App() {
         <Route path="/palindromechecker" element={<PalindromeChecker />} />
         <Route path="/romannumeralconverter" element={<RomanNumeralConverter />} />
         <Route path="/caesarscipher" element={<CaesarScipher />} />
-        <Route path="/telephonenumbervalidator" element={<TelephoneNumberValidator />} />
+        <Route path="/currencyconverter" element={<CurrencyConverter />} />
         <Route path="/cashregister" element={<CashRegister />} />
         <Route path="/randomquotemachine" element={<RandomQuoteMachine />} />
         <Route path="/markdownpreviewer" element={<MarkdownPreviewer />} />
