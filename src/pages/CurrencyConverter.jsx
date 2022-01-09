@@ -2,13 +2,27 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import CurrencyRow from '../components/CurrencyConverter/CurrencyRow'
 
-const CURRENCY_CODES_URL = 'https://v6.exchangerate-api.com/v6/b1e3da990e546618bf72310c/codes';
+const API_KEY = process.env.REACT_APP_API_KEY_EXCHANGE_CURRENCY;
+const CURRENCY_CODES_URL = `https://v6.exchangerate-api.com/v6/${API_KEY}/codes`;
 
 const CurrencyConverter = () => {
 
     const [currencyOptions, setCurrencyOptions] = useState([])
     const [fromCurrency, setFromCurrency] = useState()
     const [toCurrency, setToCurrency] = useState()
+    const [exchangeRate, setExchangeRate] = useState(1)
+    const [amount, setAmount] = useState(1)
+    const [amountInFromCurrency, setAmountInFromCurrency] = useState(true)
+    const [ready, setReady] = useState(false)
+
+    let fromAmount, toAmount
+    if (amountInFromCurrency) {
+        fromAmount = amount
+        toAmount = amount * exchangeRate
+    } else {
+        toAmount = amount
+        fromAmount = amount / exchangeRate
+    }
 
     useEffect(() => {
        fetch(CURRENCY_CODES_URL)
@@ -18,11 +32,27 @@ const CurrencyConverter = () => {
             setCurrencyOptions([...data.supported_codes])
             setFromCurrency(firstCurrency)
             setToCurrency(firstCurrency)
+            setReady(true)
         })
     }, [])
+    useEffect(() => {
+        if (ready) {
+            fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/pair/${fromCurrency[0]}/${toCurrency[0]}/22.00`)
+            .then(res => res.json())
+            .then(data => {
+                setExchangeRate(data.conversion_rate);
+            })   
+        }
+     }, [fromCurrency, toCurrency])
 
-    console.log("From " + fromCurrency);
-    console.log(`To ${toCurrency}`);
+    function handleFromAmountChange(e) {
+        setAmount(e.target.value)
+        setAmountInFromCurrency(true)
+    }
+    function handleToAmountChange(e) {
+        setAmount(e.target.value)
+        setAmountInFromCurrency(false)
+    }
     return (
         <main>
             <section className="project section-center">
@@ -33,12 +63,16 @@ const CurrencyConverter = () => {
                 <CurrencyRow 
                     currencyOptions = {currencyOptions} 
                     selectedCurrency = {fromCurrency}
-                    onChangeCurrency = {e => setFromCurrency(e.target.value.split(','))}/>
-                <div>=</div>
+                    onChangeCurrency = {e => setFromCurrency(e.target.value.split(','))}
+                    onChangeAmount={handleFromAmountChange}
+                    amount = {fromAmount}/>
+                <div className='exchange-equality-sign'>=</div>
                 <CurrencyRow 
                     currencyOptions = {currencyOptions} 
                     selectedCurrency = {toCurrency}
-                    onChangeCurrency = {e => setToCurrency(e.target.value.split(','))}/>
+                    onChangeCurrency = {e => setToCurrency(e.target.value.split(','))}
+                    onChangeAmount={handleToAmountChange}
+                    amount={toAmount}/>
                 <Link to="/"><button className='btn btn-back'>go back</button></Link>
             </section>
         </main>

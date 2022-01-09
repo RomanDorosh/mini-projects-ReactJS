@@ -315,3 +315,38 @@ Markdown
   }
 }
 
+/*
+=============== 
+Currency Exchange
+===============
+*/
+.exchange-container {
+  display: flex;
+  flex-direction: column;
+}
+.exchange-select {
+  border: none;
+  background: var(--clr-grey-8);
+  font-size: 1.2rem;
+  padding: 0.25rem 0.5rem;
+  width: 100%;
+  border-radius: var(--radius);
+  margin-top: .8rem;
+}
+.exchange-equality-sign {
+  font-size: 2rem;
+}
+
+@media screen and (min-width: 992px) {
+  .exchange-container {
+    flex-direction: row;
+  }
+
+  .exchange-select {
+    margin-left: 1rem;
+    margin-top: 0;
+    font-size: 1rem;
+  }
+  
+}
+
