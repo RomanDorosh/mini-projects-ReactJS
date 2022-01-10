@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const CashRegister = () => {
+const Quiz = () => {
     return (
         <main>
             <section className="project section-center">
                 <div className="title">
-                    <h3>Cash Register</h3>
+                    <h3>Quiz</h3>
                     <div className="underline"></div>
                 </div>
                 <h4>This project is currently under development...</h4>
@@ -16,4 +16,4 @@ const CashRegister = () => {
     )
 }
 
-export default CashRegister
+export default Quiz

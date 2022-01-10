@@ -6,7 +6,6 @@ import PalindromeChecker from './pages/PalindromeChecker';
 import RomanNumeralConverter from "./pages/RomanNumeralConverter";
 import CaesarScipher from "./pages/CaesarScipher";
 import CurrencyConverter from "./pages/CurrencyConverter";
-import CashRegister from "./pages/CashRegister";
 import RandomQuoteMachine from "./pages/RandomQuoteMachine";
 import MarkdownPreviewer from "./pages/MarkdownPreviewer";
 import DrumMachine from "./pages/DrumMachine";
@@ -14,6 +13,7 @@ import JavascriptCalculator from "./pages/JavascriptCalculator";
 import TwentyfivePlusFiveClock from "./pages/TwentyfivePlusFiveClock";
 import SurveyForm from "./pages/SurveyForm";
 import ProductLandingPage from "./pages/ProductLandingPage";
+import Quiz from "./pages/Quiz";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
         <Route path="/romannumeralconverter" element={<RomanNumeralConverter />} />
         <Route path="/caesarscipher" element={<CaesarScipher />} />
         <Route path="/currencyconverter" element={<CurrencyConverter />} />
-        <Route path="/cashregister" element={<CashRegister />} />
+        <Route path="/quiz" element={<Quiz />} />
         <Route path="/randomquotemachine" element={<RandomQuoteMachine />} />
         <Route path="/markdownpreviewer" element={<MarkdownPreviewer />} />
         <Route path="/drummachine" element={<DrumMachine />} />

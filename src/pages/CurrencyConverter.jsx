@@ -15,6 +15,7 @@ const CurrencyConverter = () => {
     const [amountInFromCurrency, setAmountInFromCurrency] = useState(true)
     const [ready, setReady] = useState(false)
 
+    // using simple logic to convert currencies instead of make API calls for every exchange
     let fromAmount, toAmount
     if (amountInFromCurrency) {
         fromAmount = amount
@@ -24,6 +25,7 @@ const CurrencyConverter = () => {
         fromAmount = amount / exchangeRate
     }
 
+    //get all currencies codes
     useEffect(() => {
        fetch(CURRENCY_CODES_URL)
         .then(res => res.json())
@@ -35,15 +37,19 @@ const CurrencyConverter = () => {
             setReady(true)
         })
     }, [])
+
+    // get conversion rate for selected currencies
     useEffect(() => {
         if (ready) {
-            fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/pair/${fromCurrency[0]}/${toCurrency[0]}/22.00`)
+            
+            // the API data is an array with two elements, the first one the ISO code and the second one the currency name, that why we get rate with first element
+            fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/pair/${fromCurrency[0]}/${toCurrency[0]}`)
             .then(res => res.json())
             .then(data => {
                 setExchangeRate(data.conversion_rate);
             })   
         }
-     }, [fromCurrency, toCurrency])
+     }, [fromCurrency, toCurrency, ready])
 
     function handleFromAmountChange(e) {
         setAmount(e.target.value)

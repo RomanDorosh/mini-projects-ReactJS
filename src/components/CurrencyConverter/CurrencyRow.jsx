@@ -8,6 +8,8 @@ const CurrencyRow = props => {
             <input type='number' value={amount} onChange={onChangeAmount}/>
             <select className='exchange-select' value={selectedCurrency} onChange={onChangeCurrency}>
                 {currencyOptions.map(option => (
+
+                    // the API data is an array with two elements, the first one the ISO code and the second one the currency name
                     <option key={option[0]} value={option}>{option[0]} - {option[1]}</option>
                 ))}
             </select>

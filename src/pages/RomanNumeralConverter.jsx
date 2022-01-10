@@ -10,11 +10,15 @@ const RomanNumeralConverter = () => {
         e.preventDefault();
 
         try {
+            //array of Roman numbers
             let lookup = { M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1 };
             let roman = '', i;
             let num = number;
 
             for (i in lookup) {
+
+                // while inserted number is more than current array element add element's key to a string 
+                // and substract value of that element from the number 
                 while (num >= lookup[i]) {
                     roman += i;
                     num -= lookup[i];

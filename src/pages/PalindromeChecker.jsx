@@ -11,6 +11,8 @@ const PalindromeChecker = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         try {
+
+            // using regular expression to check inserted string
             let myRegex = /[a-z0-9]/ig;
             let arr = string.toLowerCase().match(myRegex);
             let arrRev = string.toLowerCase().match(myRegex).reverse();
