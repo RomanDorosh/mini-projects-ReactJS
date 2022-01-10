@@ -350,3 +350,31 @@ Currency Exchange
   
 }
 
+/*
+=============== 
+Random Quote Machine
+===============
+*/
+
+.quote-box {
+  background-color: var(--clr-primary-9);
+  border-radius: var(--radius);
+  width: 80%;
+  text-align: center;
+  min-height: 100px;
+  padding: 2rem;
+}
+.quote-text {
+  font-size: 1.4rem;
+  font-weight: 500;
+  font-family: 'Delius Swash Caps', cursive;
+  color: var(--clr-grey-2);
+}
+
+.quote-author {
+  width: 100%;
+  text-align: right;
+  padding: 0.5rem;
+  color: var(--clr-grey-5);
+}
+
